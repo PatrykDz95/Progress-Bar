@@ -24,6 +24,7 @@ public class EmployeeService extends Service<ObservableList<String>>{
                     updateMessage("Added " + names[i] + " to the list");
                     updateProgress(i + 1, 4);
                     Thread.sleep(200);
+
                 }
                 return employees;
             }

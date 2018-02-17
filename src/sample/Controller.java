@@ -26,12 +26,11 @@ public class Controller {
 
         progressBar.visibleProperty().bind(service.runningProperty());
         progressLabel.visibleProperty().bind(service.runningProperty());
-
     }
 
     @FXML
     public void buttonPressed(){
-        // can press the button even if the listView is being loaded multiple time's
+        // can press the button even if the listView was loaded before
         if(service.getState() == Service.State.SUCCEEDED){
             service.reset();
             service.start();
@@ -41,11 +40,3 @@ public class Controller {
         }
     }
 }
-
-
-
-
-
-
-
-
