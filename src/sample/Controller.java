@@ -17,6 +17,7 @@ public class Controller {
     private Label progressLabel;
 
     private Service<ObservableList<String>> service;
+
     public void initialize(){
         service = new EmployeeService();
         listView.itemsProperty().bind(service.valueProperty());
@@ -30,11 +31,11 @@ public class Controller {
 
     @FXML
     public void buttonPressed(){
-        // can press the button even if th listView is loaded without exception's
+        // can press the button even if the listView is being loaded multiple time's
         if(service.getState() == Service.State.SUCCEEDED){
             service.reset();
             service.start();
-         // if we load the listViewfor the first time
+         // if we load the listView for the first time
         }else if(service.getState() == Service.State.READY) {
             service.start();
         }
